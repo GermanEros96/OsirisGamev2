@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://12ksbb5kq32m"]
+
+[ext_resource type="Script" uid="uid://63k7wpkylhpw" path="res://scripts/game.gd" id="1_6ea2g"]
+[ext_resource type="PackedScene" uid="uid://dntd7k3hfxnh0" path="res://scenes/core/title_screen.tscn" id="1_avem7"]
+
+[node name="Game" type="Node2D"]
+position = Vector2(1058, 395)
+script = ExtResource("1_6ea2g")
+
+[node name="Title_Screen" parent="." instance=ExtResource("1_avem7")]
+metadata/_edit_use_anchors_ = true

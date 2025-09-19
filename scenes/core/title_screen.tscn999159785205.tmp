@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dntd7k3hfxnh0"]
+[gd_scene load_steps=10 format=3 uid="uid://dntd7k3hfxnh0"]
 
 [ext_resource type="Texture2D" uid="uid://cq7lbsq6alqxn" path="res://assets/art/bg/Background.png" id="1_6opqp"]
 [ext_resource type="Script" uid="uid://dld3o0a2iib3c" path="res://scripts/utils/title_screen.gd" id="1_myoxn"]
+[ext_resource type="PackedScene" uid="uid://d4m3ntj8m1svq" path="res://scenes/levels/level1/level_1.tscn" id="2_cb40d"]
 [ext_resource type="Texture2D" uid="uid://tg6mi1ipb2ry" path="res://assets/art/utils/hueso.png" id="3_pyuio"]
 [ext_resource type="Script" uid="uid://c4wu4yx5o8gu5" path="res://scripts/utils/soundbg_slider.gd" id="4_fm0jc"]
 [ext_resource type="AudioStream" uid="uid://dvrcbeoj2tqt7" path="res://assets/sounds/soundbg/title_sound.wav" id="4_whpye"]
@@ -28,6 +29,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_myoxn")
+level1_scene = ExtResource("2_cb40d")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(0.899258, 0.899258, 0.899258, 0.686275)

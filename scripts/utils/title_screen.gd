@@ -1,24 +1,21 @@
 extends Control
+signal start_game
 
-signal start_game   # por si preferís que Game lo maneje
-
-# --- Nodos de la UI ---
+# Ajusta estas rutas a tu jerarquía real (según tu captura):
 @onready var main_buttons: VBoxContainer = $Background/MainButtons
-@onready var options: Panel = $Options
-@onready var soundPanel: Panel = $Options/SoundPanel
-@onready var labelOptions: Label = $Options/Label
+@onready var options: Panel               = $Options
+@onready var soundPanel: Panel            = $Options/SoundPanel
+@onready var labelOptions: Label          = $Options/Label
 
-# --- Asigná acá level1.tscn en el Inspector (arrastra la escena) ---
-@export var level1_scene: PackedScene
+# (Opcional, no se usa aquí; Game decide qué cargar)
+@export var level_scene: PackedScene = preload("res://scenes/levels/level1/level_1.tscn")
+
 
 func _ready() -> void:
+	# Asegura que el Title ocupe toda la ventana aunque se instancie dentro de otro nodo
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+
 	# Menús ocultos al inicio
-	
-	
-	
-	
-	
-	
 	options.hide()
 	soundPanel.hide()
 
@@ -27,12 +24,10 @@ func _process(_delta: float) -> void:
 
 func _on_start_pressed() -> void:
 	print("Iniciando Juego..")
-	if level1_scene:
-		# Si no asignaste la escena, avisamos a Game para que la cargue/active
-		emit_signal("start_game")
+	# El que decide qué escena cargar es Game; aquí solo emitimos la señal
+	start_game.emit()
 
 func _on_settings_pressed() -> void:
-	# Mostrar opciones, ocultar botones principales
 	main_buttons.hide()
 	options.show()
 

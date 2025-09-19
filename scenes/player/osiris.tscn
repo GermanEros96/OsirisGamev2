@@ -247,7 +247,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_qnjl4")
 }],
 "loop": true,
-"name": &"idle_right",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -349,8 +349,8 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bddtd"]
-size = Vector2(40.25, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt6g3"]
+size = Vector2(48.5, 23)
 
 [node name="Osiris" type="CharacterBody2D" groups=["Player"]]
 texture_filter = 1
@@ -360,15 +360,15 @@ script = ExtResource("1_tt6g3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(61.25, 137.25)
+position = Vector2(64.5, 137.25)
 sprite_frames = SubResource("SpriteFrames_uuwqh")
-animation = &"down"
-frame_progress = 0.216316
+animation = &"alert"
+frame_progress = 0.91367
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(157, 96)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
-position = Vector2(59, 154.5)
-shape = SubResource("RectangleShape2D_bddtd")
+position = Vector2(62.5, 152.25)
+shape = SubResource("RectangleShape2D_tt6g3")

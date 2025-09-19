@@ -27,6 +27,5 @@ func release():
 	tw = create_tween()
 	tw.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	tw.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	# SIN rebote: vuelve directo al reposo
 	tw.tween_property(self, "position:y", base_y, release_time)
 	tw.parallel().tween_property(spr, "position", Vector2.ONE, release_time)

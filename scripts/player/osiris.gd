@@ -11,6 +11,7 @@ const GRAVITY := 900.0
 
 # --- Umbral para activar "jump_run" cuando CORRE muy rápido ---
 const RUN_TRIGGER := 250.0
+signal bones_changed(count: int)
 var bones: int = 0
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
@@ -93,3 +94,5 @@ func add_bone(amount: int = 1) -> void:
 	bones += amount
 	# Mensajes de consola para ver que funciona:
 	print("Osiris tiene huesos: %d" % bones)
+	emit_signal("bones_changed", bones)
+	
